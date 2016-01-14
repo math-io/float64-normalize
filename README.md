@@ -46,7 +46,7 @@ var out = normalize( 0 );
 // returns [ 0, 0 ];
 ```
 
-If `x == NaN` or `x` is either positive or negative `infinity`,
+If `x` is either positive or negative `infinity` or `NaN`,
 
 ``` javascript
 var pinf = require( 'const-pinf-float64' );

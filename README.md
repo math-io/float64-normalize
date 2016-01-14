@@ -32,7 +32,10 @@ The first element of the returned `array` corresponds to `y` and the second to `
 ``` javascript
 var pow = require( 'math-power' );
 
-var bool = ( out[0]*pow(2,out[1]) === 3.14e-319 );
+var y = out[ 0 ];
+var exp = out[ 1 ];
+
+var bool = ( y*pow(2,exp) === 3.14e-319 );
 // returns true
 ```
 

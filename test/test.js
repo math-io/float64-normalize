@@ -31,7 +31,8 @@ test( 'the function normalizes a denormalized number, returning a normal number 
 	t.ok( v[ 0 ] >= smallest.VALUE, 'returns a normal number' );
 	t.equal( v[ 0 ]*pow( 2, v[ 1 ] ), smallest.DENORMALIZED, 'x = y * 2^exp' );
 
-	for ( i = 0; i < 100; i++ ) {
+	// Other subnormals...
+	for ( i = 0; i < 1000; i++ ) {
 		frac = Math.random() * 10;
 		exp = -309 - round( Math.random()*14 );
 		x = frac * pow( 10, exp );

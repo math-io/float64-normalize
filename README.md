@@ -78,10 +78,18 @@ var i;
 
 // Generate denormalized numbers and then normalize them...
 for ( i = 0; i < 100; i++ ) {
+	// Generate a random fraction:
 	frac = Math.random() * 10;
-	exp = -309 - round( Math.random()*14 ); // -308 > exp > -324
-	x = frac * pow( 10, exp ); // ~2.23e-308 > x >= ~4.94e-324
+
+	// Generate an exponent on the interval (-308,-324):
+	exp = -309 - round( Math.random()*14 );
+
+	// Create a subnormal number (~2.23e-308, ~4.94e-324):
+	x = frac * pow( 10, exp );
+
+	// Determine a `y` and an `exp` to "normalize" the subnormal:
 	v = normalize( x );
+
 	console.log( '%d = %d * 2^%d = %d', x, v[0], v[1], v[0]*pow(2,v[1]) );
 }
 ```

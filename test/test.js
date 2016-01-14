@@ -4,6 +4,7 @@
 
 var test = require( 'tape' );
 var pow = require( 'math-power' );
+var round = require( 'math-round' );
 var pinf = require( 'const-pinf-float64' );
 var ninf = require( 'const-ninf-float64' );
 var smallest = require( 'const-smallest-float64' );
@@ -18,18 +19,29 @@ test( 'main export is a function', function test( t ) {
 });
 
 test( 'the function normalizes a denormalized number, returning a normal number and an exponent', function test( t ) {
-	var val;
+	var frac;
+	var exp;
+	var x1;
+	var x;
+	var v;
+	var i;
 
 	// Smallest denormalized number:
-	val = normalize( smallest.DENORMALIZED );
-	t.ok( val[ 0 ] >= smallest.VALUE, 'returns a normal number' );
-	t.equal( val[ 0 ]*pow( 2, val[ 1 ] ), smallest.DENORMALIZED, 'x = y * 2^exp' );
+	v = normalize( smallest.DENORMALIZED );
+	t.ok( v[ 0 ] >= smallest.VALUE, 'returns a normal number' );
+	t.equal( v[ 0 ]*pow( 2, v[ 1 ] ), smallest.DENORMALIZED, 'x = y * 2^exp' );
 
-	// Another denormalized value:
-	val = normalize( 3.14e-319 );
-	t.ok( val[ 0 ] >= smallest.VALUE, 'returns a normal number' );
-	t.equal( val[ 0 ]*pow( 2, val[ 1 ] ), 3.14e-319, 'x = y * 2^exp' );
+	for ( i = 0; i < 100; i++ ) {
+		frac = Math.random() * 10;
+		exp = -309 - round( Math.random()*14 );
+		x = frac * pow( 10, exp );
+		v = normalize( x );
 
+		t.ok( v[ 0 ] >= smallest.VALUE, 'returns a normal number' );
+
+		x1 = v[ 0 ] * pow( 2, v[ 1 ] );
+		t.equal( x1, x, 'y*2^exp=x. y='+v[0]+', exp='+v[1]+', x='+x );
+	}
 	t.end();
 });
 

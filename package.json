@@ -46,7 +46,6 @@
     "url": "https://github.com/math-io/normalize-float64/issues"
   },
   "dependencies": {
-    "big-integer": "^1.6.10",
     "const-smallest-float64": "^1.0.0",
     "math-abs": "^1.0.2",
     "validate.io-infinite": "^1.0.0"

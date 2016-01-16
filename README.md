@@ -8,14 +8,14 @@ Normalize
 ## Installation
 
 ``` bash
-$ npm install math-normalize-float64
+$ npm install math-float64-normalize
 ```
 
 
 ## Usage
 
 ``` javascript
-var normalize = require( 'math-normalize-float64' );
+var normalize = require( 'math-float64-normalize' );
 ```
 
 #### normalize( x )
@@ -68,7 +68,7 @@ out = normalize( NaN );
 ``` javascript
 var round = require( 'math-round' );
 var pow = require( 'math-power' );
-var normalize = require( 'math-normalize-float64' );
+var normalize = require( 'math-float64-normalize' );
 
 var frac;
 var exp;
@@ -158,23 +158,23 @@ $ make view-browser-tests
 Copyright &copy; 2016. The [Compute.io][compute-io] Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/math-normalize-float64.svg
-[npm-url]: https://npmjs.org/package/math-normalize-float64
+[npm-image]: http://img.shields.io/npm/v/math-float64-normalize.svg
+[npm-url]: https://npmjs.org/package/math-float64-normalize
 
-[build-image]: http://img.shields.io/travis/math-io/normalize-float64/master.svg
-[build-url]: https://travis-ci.org/math-io/normalize-float64
+[build-image]: http://img.shields.io/travis/math-io/float64-normalize/master.svg
+[build-url]: https://travis-ci.org/math-io/float64-normalize
 
-[coverage-image]: https://img.shields.io/codecov/c/github/math-io/normalize-float64/master.svg
-[coverage-url]: https://codecov.io/github/math-io/normalize-float64?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/math-io/float64-normalize/master.svg
+[coverage-url]: https://codecov.io/github/math-io/float64-normalize?branch=master
 
-[dependencies-image]: http://img.shields.io/david/math-io/normalize-float64.svg
-[dependencies-url]: https://david-dm.org/math-io/normalize-float64
+[dependencies-image]: http://img.shields.io/david/math-io/float64-normalize.svg
+[dependencies-url]: https://david-dm.org/math-io/float64-normalize
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/math-io/normalize-float64.svg
-[dev-dependencies-url]: https://david-dm.org/dev/math-io/normalize-float64
+[dev-dependencies-image]: http://img.shields.io/david/dev/math-io/float64-normalize.svg
+[dev-dependencies-url]: https://david-dm.org/dev/math-io/float64-normalize
 
-[github-issues-image]: http://img.shields.io/github/issues/math-io/normalize-float64.svg
-[github-issues-url]: https://github.com/math-io/normalize-float64/issues
+[github-issues-image]: http://img.shields.io/github/issues/math-io/float64-normalize.svg
+[github-issues-url]: https://github.com/math-io/float64-normalize/issues
 
 [tape]: https://github.com/substack/tape
 [istanbul]: https://github.com/gotwarlost/istanbul

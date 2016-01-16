@@ -1,5 +1,5 @@
 {
-  "name": "math-normalize-float64",
+  "name": "math-float64-normalize",
   "version": "0.0.0",
   "description": "Returns a normal number `y` and exponent `exp` satisfying `x = y * 2^exp`.",
   "author": {
@@ -23,7 +23,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/math-io/normalize-float64.git"
+    "url": "git://github.com/math-io/float64-normalize.git"
   },
   "keywords": [
     "compute.io",
@@ -43,7 +43,7 @@
     "subnormal"
   ],
   "bugs": {
-    "url": "https://github.com/math-io/normalize-float64/issues"
+    "url": "https://github.com/math-io/float64-normalize/issues"
   },
   "dependencies": {
     "const-smallest-float64": "^1.0.0",

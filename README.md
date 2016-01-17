@@ -53,13 +53,13 @@ var pinf = require( 'const-pinf-float64' );
 var ninf = require( 'const-ninf-float64' );
 
 var out = normalize( pinf );
-// returns null
+// returns [ pinf, 0 ]
 
 out = normalize( ninf );
-// returns null
+// returns [ ninf, 0 ]
 
 out = normalize( NaN );
-// returns null
+// returns [ NaN, 0 ]
 ```
 
 

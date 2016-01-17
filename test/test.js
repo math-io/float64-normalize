@@ -33,12 +33,12 @@ test( 'the function normalizes a denormalized number, returning a normal number 
 
 	// Other subnormals...
 	for ( i = 0; i < 1000; i++ ) {
-		frac = Math.random() * 10;
+		frac = 0.26 + Math.random()*10; // 0.26 prevents underflow
 		exp = -309 - round( Math.random()*14 );
 		x = frac * pow( 10, exp );
 		v = normalize( x );
 
-		t.ok( v[ 0 ] >= smallest.VALUE, 'returns a normal number' );
+		t.ok( v[ 0 ] >= smallest.VALUE, 'returns a normal number ' + v[0] );
 
 		x1 = v[ 0 ] * pow( 2, v[ 1 ] );
 		t.equal( x1, x, 'y*2^exp=x. y='+v[0]+', exp='+v[1]+', x='+x );
@@ -52,20 +52,21 @@ test( 'the function returns `[0,0]` if provided a `0`', function test( t ) {
 	t.end();
 });
 
-test( 'the function returns `null` if provided a `+infinity`', function test( t ) {
+test( 'the function returns `[+inf,0]` if provided a `+infinity`', function test( t ) {
 	var val = normalize( pinf );
-	t.equal( val, null, 'returns null' );
+	t.deepEqual( val, [pinf,0], 'returns [+inf,0]' );
 	t.end();
 });
 
-test( 'the function returns `null` if provided a `-infinity`', function test( t ) {
+test( 'the function returns `[-inf,0]` if provided a `-infinity`', function test( t ) {
 	var val = normalize( ninf );
-	t.equal( val, null, 'returns null' );
+	t.deepEqual( val, [ninf,0], 'returns [-inf,0]' );
 	t.end();
 });
 
-test( 'the function returns `null` if provided a `NaN`', function test( t ) {
+test( 'the function returns `[NaN,0]` if provided a `NaN`', function test( t ) {
 	var val = normalize( NaN );
-	t.equal( val, null, 'returns null' );
+	t.ok( val[0] !== val[0], 'first element is NaN' );
+	t.equal( val[1], 0, 'second element is 0' );
 	t.end();
 });

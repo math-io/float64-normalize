@@ -36,11 +36,15 @@
     "mathematics",
     "float64",
     "double",
+    "dbl",
     "floating-point",
     "ieee754",
     "denormalized",
     "normalize",
-    "subnormal"
+    "subnormal",
+    "number",
+    "normal",
+    "float"
   ],
   "bugs": {
     "url": "https://github.com/math-io/float64-normalize/issues"
